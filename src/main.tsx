@@ -1,15 +1,11 @@
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { scan } from "react-scan";
+import Providers from "./components/providers";
 import { routeTree } from "./routeTree.gen";
 import "./index.css";
 
 const router = createRouter({ routeTree });
-
-scan({
-	enabled: true,
-});
 
 declare module "@tanstack/react-router" {
 	interface Register {
@@ -20,6 +16,8 @@ declare module "@tanstack/react-router" {
 // biome-ignore lint/style/noNonNullAssertion: Should not be null
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<RouterProvider router={router} />
+		<Providers>
+			<RouterProvider router={router} />
+		</Providers>
 	</StrictMode>,
 );
