@@ -16,7 +16,7 @@
 				}
 			}
 		},
-		"ignore": ["dist"]
+		"ignore": ["dist", "./src/routeTree.gen.ts"]
 	},
 	"javascript": { "formatter": { "quoteStyle": "double" } },
 	"overrides": [
